@@ -33,3 +33,11 @@ else
     puts "Ветвь if - false."
 
 end
+
+unless testIf == 41
+    puts "Ветвь unless."
+
+else
+    puts "Ветвь else - unless."
+
+end
