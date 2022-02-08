@@ -8,18 +8,33 @@ def getSumDigits
     digitsSum
 end
 
-def getMaxDigit nubmer
-    nubmer.digits.max
+def getMaxDigit number
+    number.digits.max
 end
 
-def getMinDigit nubmer
-    nubmer.digits.min
+def getMinDigit number
+    number.digits.min
 end
 
-def getMulDigit nubmer
+def getMulDigit number
     digitsMul = 1
-    nubmer.digits.each{|i| digitsMul *= i }
+    number.digits.each{|i| digitsMul *= i }
     digitsMul
 end
 
-puts getMulDigit(273)
+def gcd a,b
+    while b != 0
+        a,b = b,a % b
+    end
+    a
+end
+
+def metod1 number
+couter = 0
+    (2..number).each{ |i| 
+ couter +=1 if gcd(i,number) == 1
+}
+couter
+end
+
+puts metod1(5)
