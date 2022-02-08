@@ -20,3 +20,16 @@ case answer
     else
         puts "В любом случае, скоро будет  ruby"
 end
+
+testIf = 52;
+
+if testIf == 41
+    puts "Ветвь if - true."
+
+elsif testIf == 52
+    puts "Ветвь if - elsif."
+
+else
+    puts "Ветвь if - false."
+
+end
