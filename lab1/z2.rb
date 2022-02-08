@@ -41,3 +41,6 @@ else
     puts "Ветвь else - unless."
 
 end
+
+puts "if 4 < 10" if 4 < 10
+puts "unless 4 > 10" unless 4 > 10
