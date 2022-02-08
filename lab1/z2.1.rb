@@ -29,7 +29,7 @@ def gcd a,b
     a
 end
 
-def metod1 number
+def method1 number
 couter = 0
     (2..number).each{ |i| 
  couter +=1 if gcd(i,number) == 1
@@ -37,4 +37,10 @@ couter = 0
 couter
 end
 
-puts metod1(5)
+def method2 number
+    digitsSum = 0
+    number.digits.each{|i| digitsSum += i if i%3 == 0}
+    digitsSum
+end
+
+puts method2(239)
