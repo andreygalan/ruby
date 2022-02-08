@@ -44,3 +44,11 @@ end
 
 puts "if 4 < 10" if 4 < 10
 puts "unless 4 > 10" unless 4 > 10
+
+puts "Введите команду ОС:"
+commandos = STDIN.gets.chomp
+system commandos
+
+puts "Введите команду ruby:"
+commandruby = STDIN.gets.chomp
+eval commandruby 
