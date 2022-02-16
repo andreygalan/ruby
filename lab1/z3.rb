@@ -6,7 +6,11 @@ def get_min_element array
 min 
 end
 
+def get_max_element array
+    max=array[0]
+    for i in array
+        max=i   if i > max 
+    end
+    max 
+end
 
-
-
-puts get_min_element([7,2,3,4,5,6,7])
