@@ -11,10 +11,10 @@ def get_min_digit number
     number.digits.min
 end
 
-def getMulDigit number
+def get_mul_digit number
     digits_mul = 1
-    number.digits.each{|i| digitsMul *= i }
-    digitsMul
+    number.digits.each{|i| digits_mul *= i }
+    digits_ul
 end
 
 def gcd a,b
@@ -42,11 +42,10 @@ def method3 number
     divisor=0
     divisor_prime_count=0
     (2..number-1).each{|i|   
-        puts i
         acc=0
         number.digits.each{|digit|  
         acc += 1 if gcd(i,digit) == 1 } if number % i == 0
-        if acc>=divisor_prime_count 
+        if acc>divisor_prime_count 
             divisor_prime_count=acc
             divisor=i
         end
@@ -54,5 +53,27 @@ def method3 number
     puts divisor_prime_count
     divisor
 end
+number = ARGV[1].to_i
 
-puts method3(259)
+case ARGV[0]
+
+when '1'
+    puts get_sum_digits number
+when '2'
+    puts get_max_digit number
+
+when '3'
+    puts get_min_digit number
+when '4'
+    puts get_mul_digit number
+when '5'
+    puts method1 number
+when '6'
+    puts method2 number
+when '7'
+    puts method3 number
+else
+    puts 'Hello World'
+end
+
+
