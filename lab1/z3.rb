@@ -22,3 +22,11 @@ def get_sum_element array
     sum 
 end
 
+def get_mult_element array
+    mult=1
+    for i in array
+        mult *= i   
+    end
+    mult 
+end
+
