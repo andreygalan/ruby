@@ -14,3 +14,11 @@ def get_max_element array
     max 
 end
 
+def get_sum_element array
+    sum=0
+    for i in array
+        sum += i   
+    end
+    sum 
+end
+
