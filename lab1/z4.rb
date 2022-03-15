@@ -21,5 +21,10 @@ def method3 array
     array[a+1...-b]
 end
 
+def method4 array,a,b
+    array.inject(0){|count,v| (v>=a and v<=b) ? count+1 : count}
+end
+
+
 array=[8,3,4,5,1,6,7]
-puts method3 [8,1,4,5,1,6,7]
+puts method4 [8,1,4,5,1,6,7],1,4
