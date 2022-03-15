@@ -3,5 +3,8 @@ def method1 str
     a==a.sort
 end
 
+def method2 str 
+    str.scan(/[A]/).size
+end
 
-puts method1 "abAcdAA"
+puts method2 "abAcdAA"
