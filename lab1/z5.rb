@@ -17,8 +17,11 @@ def method4 str
 end
 
 def method5 str 
-    
     str.scan(/[a-z]/)
 end
 
-puts method5 "asdgwSADWdrdsfASD"
+def method6 str 
+    str.scan(/[A-z]/).map{|e| e.downcase}.uniq.size
+end
+
+puts method6 "asdgwSADWdrdsfASD"
