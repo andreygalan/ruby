@@ -1,11 +1,18 @@
+
+# №2 Дан целочисленный массив. Необходимо найти индекс
+# минимального элемента.
+
 def method1 array
     array.each_with_index.inject(0){|min_index, (v,i)| v< array[min_index] ? i : min_index}
 end
+
 
 def method1_v2 array
     _, idx = array.each_with_index.min
     idx
 end
+# №14 Дан целочисленный массив и интервал a..b. Необходимо найти
+# количество элементов в этом интервале.
 
 def method2 array,a,b
     array[a..b].size
@@ -15,17 +22,23 @@ end
 def method2_v2 a,b
     b-a+1
 end
-
+# №26 Дан целочисленный массив. Необходимо найти количество
+# элементов между первым и последним минимальным.
 def method3 array
     a = method1 array
     b = (method1 array.reverse)+1
     array[a+1...-b]
 end
 
+#38 Дан целочисленный массив и отрезок a..b. Необходимо найти
+#количество элементов, значение которых принадлежит этому отрезку.
 def method4 array,a,b
     array.inject(0){|count,v| (v>=a and v<=b) ? count+1 : count}
 end
 
+#50 Для двух введенных списков L1 и L2 построить новый список,
+#состоящий из элементов, встречающихся только в одном из этих списков и
+#не повторяющихся в них.
 def method5 l1,l2
     (l1-l2)+(l2-l1)
 end

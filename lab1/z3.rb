@@ -59,9 +59,9 @@ else
         when '-f'
         if ARGV[2].length==0
             puts "Пути нет. Вводи с клавиатуры"
-            arr=read_arrayk()
+            arr = read_arrayk()
         else
-            arr=read_arrayf ARGV[2]
+            arr = read_arrayf ARGV[2]
         end
         when '-k'
         arr=read_arrayk()

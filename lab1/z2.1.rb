@@ -14,7 +14,7 @@ end
 def get_mul_digit number
     digits_mul = 1
     number.digits.each{|i| digits_mul *= i }
-    digits_ul
+    digits_mul
 end
 
 def gcd a,b
@@ -26,9 +26,7 @@ end
 
 def method1 number
 couter = 0
-    (2..number).each{ |i| 
- couter +=1 if gcd(i,number) == 1
-}
+    (2..number).each{ |i|  couter +=1 if gcd(i,number) == 1}
 couter
 end
 
@@ -50,7 +48,6 @@ def method3 number
             divisor=i
         end
     }
-    puts divisor_prime_count
     divisor
 end
 number = ARGV[1].to_i
