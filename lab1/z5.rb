@@ -16,4 +16,9 @@ def method4 str
     str.scan(regex)
 end
 
-puts method4 "3 декабря 2007 или 2 декабря 2007 31 декабря 909"
+def method5 str 
+    
+    str.scan(/[a-z]/)
+end
+
+puts method5 "asdgwSADWdrdsfASD"
