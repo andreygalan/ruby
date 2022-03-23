@@ -12,6 +12,9 @@ def sort_method2(lines)
     lines.sort_by {|line| (line.chars.inject(0){|ascii_sum, char| ascii_sum += char.ord}/line.chars.size - avr_ascii)**2 }
 end
 
+def sort_method3(lines)
+    lines.sort_by {|line| (line.scan(/[aouie][^aouie .,!?:;]/).size - line.scan(/[^aouie .,!?:;][aouie]/).size).abs}
+end
 lines = read_arrayf('stringFILE.txt')
 
-puts sort_method2(lines)
+puts sort_method3(lines)
