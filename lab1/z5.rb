@@ -7,4 +7,7 @@ def method2 str
     str.scan(/[A]/).size
 end
 
-puts method2 "abAcdAA"
+def method3 str 
+    str.scan(/([^\/\\$:*<>|]+)(?=\.\w+$)/).size
+end
+
