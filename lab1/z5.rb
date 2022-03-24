@@ -45,17 +45,17 @@ str = STDIN.gets.chomp.strip
 
 case quest
 when '1'
-    method1 str
+    puts method1 str
 when '2'
-    method2 str
+    puts method2 str
 when '3'
-    method3 str
+    puts method3 str
 when '4'
-    method4 str
+    puts method4 str
 when '5'
-    method5 str
+    puts method5 str
 when '6'
-    method6 str
+    puts method6 str
     
 else
     

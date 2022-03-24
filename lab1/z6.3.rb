@@ -38,7 +38,7 @@ def expected_value(values)
 end
 
 def avg_max_weighs_of_triplets_ASCII_code(line)
-	line.scan(/.../).map {|triplet| find_avg_weigh_of_ASCII_code(triplet)}
+	line.scan(/.../).map {|triplet| find_avg_weigh_of_ASCII_code(triplet)}.max
 end
 
 def find_avg_weigh_of_ASCII_code(line)
@@ -50,9 +50,29 @@ def standart_deviation(val1, val2)
 end
 
 def sort_method4(lines)
-    lines.sort_by {|line| standart_deviation( dispersion(avg_max_weighs_of_triplets_ASCII_code(line)) , avg_max_weighs_of_triplets_ASCII_code(lines[0]).max  )}
+    lines.sort_by {|line| standart_deviation( dispersion(avg_max_weighs_of_triplets_ASCII_code(line)) , avg_max_weighs_of_triplets_ASCII_code(lines[0])  )}
 end
 
 lines = read_arrayf('stringFILE.txt')
 
-puts sort_method4(lines)
+print "Введите номер задачи: "
+quest = STDIN.gets.to_i
+
+
+case quest
+when '1'
+    puts sort_method1 lines
+when '2'
+    puts sort_method2 lines
+when '3'
+    puts sort_method3 lines
+when '4'
+    puts sort_method4 lines
+when '5'
+    puts sort_method5 lines
+when '6'
+    puts sort_method6 lines
+    
+else
+    
+end
