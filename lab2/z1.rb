@@ -9,7 +9,7 @@ class Department
     end
 
     def to_s()
-        "#{@name} | #{@phone_number}"
+        "#{@name} | #{@phone_number} | #{self.get_duties()}"
     end
     def add_duty(duty,specification)
         @duties[duty] = specification
@@ -34,7 +34,7 @@ class Department
     def change_specification(specification)
         @duties[@select_duty] = specification
     end
-    def get_duties()
+    def get_duties()  
         @duties.keys.join(" | ")
     end
 end
@@ -44,7 +44,12 @@ dep1 = Department.new("Танспорта","89185464615")
 dep1.add_duty("1","qweqwe")
 dep1.add_duty("3","qweqwe")
 dep1.add_duty("2","qweqwe")
-puts dep1.get_duties
+dep1.add_duty("4","qweqwe")
+dep1.select_duty("3")
+dep1.delete_duty
+dep1.select_duty("4")
+dep1.change_specification("fgvghtr")
 dep2 = Department.new("Строительства","88612184615")
+puts dep1.get_specification
 puts dep1
 puts dep2
