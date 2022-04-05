@@ -1,0 +1,28 @@
+---
+- !ruby/object:Department
+  name: коммерции
+  phone_number: '79284111245'
+  duties:
+    об1: ывацукпарарр фвцйцу
+    об2: ываукцукывац
+  selected_duty:
+- !ruby/object:Department
+  name: По работе с клиентами
+  phone_number: '79284113040'
+  duties:
+    об1: ывацукпарарр
+    об2: ываукцукывац
+  selected_duty:
+- !ruby/object:Department
+  name: бухгалтерского учета
+  phone_number: '79284456784'
+  duties:
+    об1: ывацукпарарр
+    об2: ываукцукывац
+    об3: ываукцукывац
+  selected_duty:
+- !ruby/object:Department
+  name: закупок
+  phone_number: '79284355055'
+  duties: {}
+  selected_duty:

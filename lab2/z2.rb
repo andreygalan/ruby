@@ -1,5 +1,7 @@
 require_relative 'z1.rb'
 
+require "yaml"
+
 def read_from_txt(path)
     arr = Array.new
     file = File.new(path, "r:UTF-8")
@@ -33,9 +35,15 @@ def print_dep(arr)
     end
 end
 
+def write_to_yaml(path, arr)
+    File.open(path, "w") do |file|
+        file.write(YAML.dump(arr))
+    end
+end
+
 
 arr=read_from_txt("departments.txt")
 print_dep(arr)
 arr.append(Department.new("закупок","89284355055"))
 print_dep(arr)
-write_to_txt("departments.txt",arr)
+write_to_yaml("departments.yaml",arr)
