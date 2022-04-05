@@ -36,4 +36,6 @@ end
 
 arr=read_from_txt("departments.txt")
 print_dep(arr)
-write_to_txt("departments_out.txt",arr)
+arr.append(Department.new("закупок","89284355055"))
+print_dep(arr)
+write_to_txt("departments.txt",arr)
