@@ -68,6 +68,10 @@ class Department_list
         Psych.safe_load_file(path, permitted_classes: [Department])
     end
 
+    def sort_by_name()
+        @dep_list.sort_by!{|dep| dep.name.downcase}
+    end
+
     def to_s()
         str=""
         @dep_list.each do |dep|

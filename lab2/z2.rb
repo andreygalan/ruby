@@ -54,7 +54,8 @@ end
 #print_dep(arr)
 #write_to_yaml("departments.yaml",arr)
 d_list=Department_list.new("departments.txt")
-puts d_list 
+#puts d_list 
 d_list.add_note(Department.new("закупок","89284355055"))
+d_list.sort_by_name
 puts d_list 
-d_list.write_to_yaml("departments.yaml")
+#d_list.write_to_yaml("departments.yaml")
