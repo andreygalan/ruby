@@ -17,12 +17,23 @@ def read_from_txt(path)
     arr
 end
 
+def write_to_txt(path, arr)
+    File.open("#{path}", "w") do |file|
+        arr.each do |e|
+            file.puts e
+            file.puts "_"
+        end
+    end
+end
+
 def print_dep(arr)
     arr.each do |dep|
         puts dep
+        puts "_"
     end
 end
 
 
 arr=read_from_txt("departments.txt")
 print_dep(arr)
+write_to_txt("departments_out.txt",arr)

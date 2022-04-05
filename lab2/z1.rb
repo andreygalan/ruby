@@ -18,7 +18,9 @@ class Department
     end
 
     def to_s()
-        "#{@name} | #{@phone_number} | #{self.get_duties()}"
+        department_str="#{@name}|#{@phone_number}"
+        @duties.keys.each{|duty| department_str+="\n#{duty}:#{@duties[duty]}"}
+        department_str
     end
     def add_duty(duty,specification)
         @duties[duty] = specification
