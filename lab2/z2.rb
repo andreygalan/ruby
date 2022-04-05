@@ -14,9 +14,15 @@ def read_from_txt(path)
         end
         Department.new(dep_name,phone_number,duties)
     end
-    puts arr
     arr
 end
 
+def print_dep(arr)
+    arr.each do |dep|
+        puts dep
+    end
+end
 
-read_from_txt("departments.txt")
+
+arr=read_from_txt("departments.txt")
+print_dep(arr)
