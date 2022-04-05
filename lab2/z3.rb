@@ -1,8 +1,15 @@
 require_relative 'z1.rb'
 class Department_list
-    def initialize(arr=Array.new)
-    @dep_list=arr
-    @selected_note=nil
+    def initialize(path)
+        @dep_list=Array.new()
+        @selected_note=nil
+        extension = path.split(".")[-1]
+        case extension
+            when "txt"
+            @dep_list=self.read_from_txt(path)
+            when "yaml"
+            @dep_list=self.read_from_yaml(path)
+        end
     end
 
     def add_note(department)

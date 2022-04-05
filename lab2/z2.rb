@@ -48,10 +48,13 @@ end
 
 
 #arr=read_from_txt("departments.txt")
-arr=read_from_yaml("departments.yaml")
+#arr=read_from_yaml("departments.yaml")
 #print_dep(arr)
 #arr.append(Department.new("закупок","89284355055"))
 #print_dep(arr)
 #write_to_yaml("departments.yaml",arr)
-d_list=Department_list.new(arr)
+d_list=Department_list.new("departments.txt")
 puts d_list 
+d_list.add_note(Department.new("закупок","89284355055"))
+puts d_list 
+d_list.write_to_yaml("departments.yaml")
