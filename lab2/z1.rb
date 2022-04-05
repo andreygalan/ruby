@@ -51,18 +51,3 @@ class Department
         return phone_number.scan(/^(\s*)?(\+?7|8)([(\- ]?\d{3}[)\- ]?)(\d{3}[\- ]?\d{2}[\- ]?\d{2}|\d{2}[\- ]?\d{3}[\- ]?\d{2})(\s*)?$/).length == 1
     end
 end
-
-
-dep1 = Department.new("Танспорта","+7(918)5464615")
-dep1.add_duty("1","qweqwe")
-dep1.add_duty("3","qweqwe")
-dep1.add_duty("2","qweqwe")
-dep1.add_duty("4","qweqwe")
-dep1.select_duty("3")
-dep1.delete_duty
-dep1.select_duty("4")
-dep1.change_specification("fgvghtr")
-dep2 = Department.new("Строительства","88612184615")
-puts dep1.get_specification
-puts dep1
-puts dep2
