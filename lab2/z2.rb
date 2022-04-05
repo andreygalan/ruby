@@ -46,8 +46,9 @@ def read_from_yaml(path)
 end
 
 
-arr=read_from_txt("departments.txt")
-#print_dep(arr)
+#arr=read_from_txt("departments.txt")
+arr=read_from_yaml("departments.yaml")
+print_dep(arr)
 arr.append(Department.new("закупок","89284355055"))
-#print_dep(arr)
+print_dep(arr)
 write_to_yaml("departments.yaml",arr)
