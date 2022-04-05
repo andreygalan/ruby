@@ -1,11 +1,20 @@
 class Department
-    attr_accessor :name, :phone_number
+    attr_accessor :name 
+    attr_reader :phone_number
 
     def initialize(name,phone_number,duties=Hash.new,selected_duty=nil)
         @name = name
-        @phone_number = phone_number
+        self.phone_number= phone_number
         @duties = duties
         @selected_duty = selected_duty
+    end
+
+    def phone_number=(phone_number)
+        if not Department.is_phone_number?(phone_number)
+            raise "Некорректный номер телефона"
+        end
+        phone_number.gsub!(/^8/, "7")
+        @phone_number = phone_number.delete("- )(+")
     end
 
     def to_s()
@@ -37,10 +46,14 @@ class Department
     def get_duties()  
         @duties.keys.join(" | ")
     end
+
+    def self.is_phone_number?(phone_number)
+        return phone_number.scan(/^(\s*)?(\+?7|8)([(\- ]?\d{3}[)\- ]?)(\d{3}[\- ]?\d{2}[\- ]?\d{2}|\d{2}[\- ]?\d{3}[\- ]?\d{2})(\s*)?$/).length == 1
+    end
 end
 
 
-dep1 = Department.new("Танспорта","89185464615")
+dep1 = Department.new("Танспорта","+7(918)5464615")
 dep1.add_duty("1","qweqwe")
 dep1.add_duty("3","qweqwe")
 dep1.add_duty("2","qweqwe")
