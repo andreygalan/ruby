@@ -1,4 +1,5 @@
 require_relative 'z1.rb'
+require_relative 'z3.rb'
 
 require "yaml"
 
@@ -49,6 +50,6 @@ end
 #arr=read_from_txt("departments.txt")
 arr=read_from_yaml("departments.yaml")
 print_dep(arr)
-arr.append(Department.new("закупок","89284355055"))
-print_dep(arr)
-write_to_yaml("departments.yaml",arr)
+#arr.append(Department.new("закупок","89284355055"))
+#print_dep(arr)
+#write_to_yaml("departments.yaml",arr)
