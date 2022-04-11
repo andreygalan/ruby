@@ -8,14 +8,7 @@ def read_from_txt(path)
     file = File.new(path, "r:UTF-8")
     text = file.read
     arr = text.split((/\n_+\n/)).map do|dep|
-        dep = dep.split("\n")
-        dep_name,phone_number=dep[0].split("|")
-        duties=Hash.new
-        dep[1..dep.size].each do|duty| 
-            duty,spec = duty.split(":")
-            duties[duty]=spec
-        end
-        Department.new(dep_name,phone_number,duties)
+        Department.get_dep_str(dep)
     end
     arr
 end
@@ -50,12 +43,11 @@ end
 #arr=read_from_txt("departments.txt")
 #arr=read_from_yaml("departments.yaml")
 #print_dep(arr)
-#arr.append(Department.new("закупок","89284355055"))
 #print_dep(arr)
 #write_to_yaml("departments.yaml",arr)
-d_list=Department_list.new("departments.txt")
-#puts d_list 
-d_list.add_note(Department.new("закупок","89284355055"))
-d_list.sort_by_name
+d_list=Department_list.read_from_yaml("departments.yaml")
 puts d_list 
+#d_list.add_note(Department.new("закупок","89284355055"))
+#d_list.sort_by_name
+#puts d_list 
 #d_list.write_to_yaml("departments.yaml")

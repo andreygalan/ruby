@@ -3,7 +3,7 @@ class Department
     attr_reader :phone_number
 
     def initialize(name,phone_number,duties=Hash.new,selected_duty=nil)
-        @name = name
+        self.name = name
         self.phone_number= phone_number
         @duties = duties
         @selected_duty = selected_duty
@@ -22,6 +22,18 @@ class Department
         @duties.keys.each{|duty| department_str+="\n#{duty}:#{@duties[duty]}"}
         department_str
     end
+    
+    def Department.get_dep_str(dep)
+        dep = dep.split("\n")
+        dep_name,phone_number=dep[0].split("|")
+        duties=Hash.new
+        dep[1..dep.size].each do|duty| 
+            duty,spec = duty.split(":")
+            duties[duty]=spec
+        end
+        Department.new(dep_name,phone_number,duties)
+    end
+
     def add_duty(duty,specification)
         @duties[duty] = specification
     end
@@ -36,6 +48,7 @@ class Department
 
     def delete_duty()
         @duties.delete(@select_duty)
+        @select_duty = @duties.keys[0]
     end
 
     def get_specification()
@@ -45,6 +58,7 @@ class Department
     def change_specification(specification)
         @duties[@select_duty] = specification
     end
+
     def get_duties()  
         @duties.keys.join(" | ")
     end

@@ -1,23 +1,16 @@
 require_relative 'z1.rb'
 class Department_list
-    def initialize(path)
-        @dep_list=Array.new()
+    def initialize(arr=Array.new())
+        @dep_list=arr
         @selected_note=nil
-        extension = path.split(".")[-1]
-        case extension
-            when "txt"
-            @dep_list=self.read_from_txt(path)
-            when "yaml"
-            @dep_list=self.read_from_yaml(path)
-        end
     end
 
     def add_note(department)
         @dep_list.append(department)
     end
 
-    def choose_note(dep_name)
-        _,@selected_note= @dep_list.each_with_index.find{|dep,index| dep.name==dep_name}
+    def choose_note(index)
+        @selected_note=index
     end
 
     def change_note(department)
@@ -32,21 +25,13 @@ class Department_list
         @dep_list.delete_at(@selected_note)
     end
 
-    def read_from_txt(path)
-        arr = Array.new
+    def Department_list.read_from_txt(path)
         file = File.new(path, "r:UTF-8")
         text = file.read
         arr = text.split((/\n_+\n/)).map do|dep|
-            dep = dep.split("\n")
-            dep_name,phone_number=dep[0].split("|")
-            duties=Hash.new
-            dep[1..dep.size].each do|duty| 
-                duty,spec = duty.split(":")
-                duties[duty]=spec
-            end
-            Department.new(dep_name,phone_number,duties)
+            Department.get_dep_str(dep)
         end
-        arr
+        Department_list.new(arr)
     end
     
     def write_to_txt(path)
@@ -64,8 +49,8 @@ class Department_list
         end
     end
     
-    def read_from_yaml(path) 
-        Psych.safe_load_file(path, permitted_classes: [Department])
+    def Department_list.read_from_yaml(path) 
+        Department_list.new(Psych.safe_load_file(path, permitted_classes: [Department]))
     end
 
     def sort_by_name()
