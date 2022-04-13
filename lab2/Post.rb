@@ -11,7 +11,7 @@ class Post
     def to_s()
         post_str = "#{@post_name}|#{@salary}|#{@vacancy}|#{@department}"
     end
-    def Department.get_dep_str(post)
+    def Post.get_post_str(post)
         post_name,salary,vacancy,department=post.split("|")
         Post.new(department,post_name,salary,vacancy)
     end

@@ -52,6 +52,10 @@ class Post_list
         Post_list.new(Psych.safe_load_file(path, permitted_classes: [Post]))
     end
 
+    def get_vacancies()
+        @post_list.select{|post| post.vacancy}
+    end
+
     def sort_by_name()
         @post_list.sort_by!{|post| post.post_name.downcase}
     end
