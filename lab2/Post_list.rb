@@ -65,7 +65,7 @@ class Post_list
     def to_s()
         str=""
         @post_list.each do |post|
-            str+=post.to_s() +"\n"+"_\n"
+            str+=post.to_s() +"\n"+"-\n"
         end
         str
     end

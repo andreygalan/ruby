@@ -24,7 +24,11 @@ class Department
     def to_s()
         department_str="#{@name}|#{@phone_number}"
         @duties.keys.each{|duty| department_str+="\n#{duty}:#{@duties[duty]}"}
+        department_str+= @post_list.to_s
         department_str
+    end
+    def to_s_short()
+        department_str="#{@name}|#{@phone_number}"
     end
     
     def Department.get_dep_str(dep)
@@ -89,6 +93,10 @@ class Department
 
     def get_vacancies()
         @post_list.get_vacancies
+    end
+
+    def get_number_vacancies()
+        self.get_vacancies.length
     end
 
     def get_all_posts()

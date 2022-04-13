@@ -51,17 +51,29 @@ class Department_list
     end
     
     def Department_list.read_from_yaml(path) 
-        Department_list.new(Psych.safe_load_file(path, permitted_classes: [Department]))
+        Department_list.new(Psych.safe_load_file(path, permitted_classes: [Department,Post_list,Post]))
     end
 
     def sort_by_name()
         @dep_list.sort_by!{|dep| dep.name.downcase}
     end
 
+    def sort_by_numbers_vacancies
+        @dep_list.sort_by{|dep| dep.get_number_vacancies}
+    end
+
     def to_s()
         str=""
         @dep_list.each do |dep|
             str+=dep.to_s() +"\n"+"_\n"
+        end
+        str
+    end
+
+    def to_s_short()
+        str=""
+        @dep_list.each do |dep|
+            str+=dep.to_s_short() +"\n"+"_\n"
         end
         str
     end

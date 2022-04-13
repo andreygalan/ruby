@@ -42,23 +42,12 @@ end
 
 #arr=read_from_txt("departments.txt")
 #arr=read_from_yaml("departments.yaml")
-dep=Department.new("транспорта","89182633044")
-dep.add_post("уборшик","12",true)
-dep.add_post("ст.уборшик","13",false)
-dep.add_post("мл.уборшик","11",false)
-puts dep.get_all_posts
-dep.select_post(1)
-puts
-puts dep.get_selected_post
-puts
-dep.delete_post
-puts dep.get_all_posts
-dep.change_post("клинер","12",true)
-puts
-puts dep.get_all_posts
-puts
-puts dep.get_vacancies
 
+d_list=Department_list.read_from_yaml("departments2.yaml")
+#d_list.add_note(dep)
+
+#print d_list.get_note.get_number_vacancies
+puts d_list.to_s_short
 #print_dep(arr)
 #print_dep(arr)
 #write_to_yaml("departments.yaml",arr)
@@ -67,4 +56,4 @@ puts dep.get_vacancies
 #d_list.add_note(Department.new("закупок","89284355055"))
 #d_list.sort_by_name
 #puts d_list 
-#d_list.write_to_yaml("departments.yaml")
+d_list.write_to_yaml("departments2.yaml")

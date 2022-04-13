@@ -1,0 +1,131 @@
+---
+- !ruby/object:Department
+  name: транспорта
+  phone_number: '79182633044'
+  duties: {}
+  selected_duty:
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      department: транспорта
+      post_name: клинер
+      salary: '12'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта
+      post_name: мл.уборшик
+      salary: '11'
+      vacancy: false
+    selected_note: 0
+- !ruby/object:Department
+  name: транспорта
+  phone_number: '79182633044'
+  duties: {}
+  selected_duty:
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      department: транспорта
+      post_name: клинер
+      salary: '12'
+      vacancy: true
+    selected_note: 0
+- !ruby/object:Department
+  name: транспорта
+  phone_number: '79182633044'
+  duties: {}
+  selected_duty:
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      department: транспорта
+      post_name: клинер
+      salary: '12'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    selected_note: 0
+- !ruby/object:Department
+  name: транспорта3
+  phone_number: '79182633044'
+  duties: {}
+  selected_duty:
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: клинер
+      salary: '12'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта3
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    selected_note: 0
+- !ruby/object:Department
+  name: транспорта4
+  phone_number: '79182533044'
+  duties: {}
+  selected_duty:
+  post_list: !ruby/object:Post_list
+    post_list:
+    - !ruby/object:Post
+      department: транспорта4
+      post_name: водитель
+      salary: '12'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта4
+      post_name: клинер
+      salary: '12'
+      vacancy: true
+    - !ruby/object:Post
+      department: транспорта4
+      post_name: ст.водитель
+      salary: '13'
+      vacancy: true
+    selected_note: 1
