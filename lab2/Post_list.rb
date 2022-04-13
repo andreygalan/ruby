@@ -1,7 +1,8 @@
 class Post_list
+    attr_reader :post_list
     def initialize(arr=Array.new())
         @post_list=arr
-        @selected_note=nil
+        @selected_note=0
     end
 
     def add_note(post)
@@ -22,13 +23,14 @@ class Post_list
 
     def delete_note()
         @post_list.delete_at(@selected_note)
+        @selected_note=0
     end
 
-    def Department_list.read_from_txt(path)
+    def Post_list.read_from_txt(path)
         file = File.new(path, "r:UTF-8")
         text = file.read
         arr = text.split((/\n_+\n/)).map do|post|
-            Post.get_dep_str(post)
+            Post.get_post_str(post)
         end
         Post_list.new(arr)
     end
@@ -48,7 +50,7 @@ class Post_list
         end
     end
     
-    def Department_list.read_from_yaml(path) 
+    def Post_list.read_from_yaml(path) 
         Post_list.new(Psych.safe_load_file(path, permitted_classes: [Post]))
     end
 

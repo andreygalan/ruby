@@ -1,10 +1,11 @@
 require_relative 'Post_list.rb'
+require_relative 'Post.rb'
 
 class Department
     attr_accessor :name 
     attr_reader :phone_number
 
-    def initialize(name,phone_number,duties=Hash.new,selected_duty=nil,post_list=nil)
+    def initialize(name,phone_number,duties=Hash.new,selected_duty=nil,post_list=Post_list.new)
         self.name= name
         self.phone_number= phone_number
         @duties = duties
@@ -66,20 +67,32 @@ class Department
         @duties.keys.join(" | ")
     end
 
-    def add_post(post)
-        @post_list.add_note(post)
+    def add_post(post_name,salary,vacancy)
+        @post_list.add_note(Post.new(@name,post_name,salary,vacancy))
     end
 
     def select_post(index)
         @post_list.choose_note(index)
     end
 
+    def get_selected_post()
+        @post_list.get_note
+    end
+
     def delete_post()
         @post_list.delete_note
     end
 
-    def change_post(post)
-        @post_list.change_note(post)
+    def change_post(post_name,salary,vacancy)
+        @post_list.change_note(Post.new(@name,post_name,salary,vacancy))
+    end
+
+    def get_vacancies()
+        @post_list.get_vacancies
+    end
+
+    def get_all_posts()
+        @post_list.post_list
     end
 
     def self.is_phone_number?(phone_number)

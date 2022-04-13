@@ -1,8 +1,8 @@
-require_relative 'z1.rb'
+require_relative 'Department.rb'
 class Department_list
     def initialize(arr=Array.new())
         @dep_list=arr
-        @selected_note=nil
+        @selected_note=0
     end
 
     def add_note(department)
@@ -23,6 +23,7 @@ class Department_list
 
     def delete_note()
         @dep_list.delete_at(@selected_note)
+        @selected_note=0
     end
 
     def Department_list.read_from_txt(path)
