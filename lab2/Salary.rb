@@ -60,3 +60,62 @@ class Rub_percent_sal < Percent_sal
     end
 end
 
+class Fine_sal < Fix_sal
+
+    def initialize(fixed,fine)
+        super(fixed)
+        @fine = fine
+    end
+
+    def get_salary
+        super - @fine
+    end
+
+end
+
+class Fine_rub_sal < Rub_sal
+    def initialize(fixed,add_rub,fine)
+        super(fixed,add_rub)
+        @fine = fine
+    end
+        
+    def get_salary 
+        super - @fine
+    end
+end
+
+class Fine_percent_sal < Percent_sal
+    def initialize(fixed,add_percent,fine)
+        super(fixed,add_percent)
+        @fine = fine
+    end
+        
+    def get_salary 
+        super - @fine
+    end
+end
+
+class Premium_sal < Fix_sal
+    def initialize(fixed,add_premium)
+        super(fixed)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+
+class Fine_rub_percent_sal < Rub_percent_sal
+    def initialize(fixed,add_percent,add_rub,fine)
+        super(fixed,add_percent,add_rub)
+        @fine = fine
+    end
+        
+    def get_salary 
+        super - @fine
+    end
+end
+
+
