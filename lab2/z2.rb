@@ -46,8 +46,11 @@ end
 d_list=Department_list.read_from_yaml("departments2.yaml")
 #d_list.add_note(dep)
 
-#print d_list.get_note.get_number_vacancies
-puts d_list.to_s_short
+arr = d_list.get_note.get_vacancies
+arr[0]= 1
+puts d_list.get_note.get_vacancies
+
+#puts d_list.to_s_short
 #print_dep(arr)
 #print_dep(arr)
 #write_to_yaml("departments.yaml",arr)
@@ -56,4 +59,4 @@ puts d_list.to_s_short
 #d_list.add_note(Department.new("закупок","89284355055"))
 #d_list.sort_by_name
 #puts d_list 
-d_list.write_to_yaml("departments2.yaml")
+#d_list.write_to_yaml("departments2.yaml")
