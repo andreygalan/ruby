@@ -118,4 +118,81 @@ class Fine_rub_percent_sal < Rub_percent_sal
     end
 end
 
+class Premium_rub_sal < Rub_sal
+    def initialize(fixed,add_rub,add_premium)
+        super(fixed,add_rub)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_percent_sal < Percent_sal
+    def initialize(fixed,add_percent,add_premium)
+        super(fixed,add_percent)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_rub_percent_sal < Rub_percent_sal
+    def initialize(fixed,add_percent,add_rub,add_premium)
+        super(fixed,add_percent,add_rub)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_fine_sal < Fine_sal
+    def initialize(fixed,fine,add_premium)
+        super(fixed,fine)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_fine_rub_sal < Fine_sal
+    def initialize(fixed,add_rub,fine,add_premium)
+        super(fixed,add_rub,fine)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_fine_percent_sal < Fine_sal
+    def initialize(fixed,add_percent,fine,add_premium)
+        super(fixed,add_percent,fine)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
+class Premium_fine_rub_percent_sal < Fine_sal
+    def initialize(fixed,add_percent,add_rub,add_premium)
+        super(fixed,add_percent,add_rub)
+        @add_premium=add_premium
+    end
+
+    def get_salary
+        super + @add_premium
+    end
+end
+
 
